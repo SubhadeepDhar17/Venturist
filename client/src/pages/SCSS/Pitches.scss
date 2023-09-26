@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Martian+Mono&family=Mooli&family=Poppins&display=swap");
+/*font-family: 'Dela Gothic One', cursive;
+font-family: 'Martian Mono', monospace;
+font-family: 'Mooli', sans-serif;
+#ef629f, #5490e0*/
+
+.heading {
+    text-align: center;
+    padding: 2rem;
+    padding-bottom: 4rem;
+    margin: 1rem;
+    font-family: 'Dela Gothic One', cursive;
+    color: #B6BE9C;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+//   &:nth-child(odd) {
+//     background-color: #c66868;
+//   }
+}
+.pitch-container {
+  border: 1px solid transparent;
+  padding: 1rem;
+  margin: 0 3rem 5rem;
+  color: rgb(24, 24, 24);
+  background-color: #cecece;
+  box-shadow: 8px 10px 0px #b3be20;
+  border-radius: 0.4rem;
+  font-family: 'poppins';
+
+  .top-part {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    .logo-company-site {
+      display: flex;
+
+      img {
+        width: 50px;
+        margin-left: 1rem;
+        margin-right: 2rem;
+      }
+      h1 {
+        font-size: 2rem;
+        font-family: 'Poppins', sans-serif;
+        letter-spacing: 0.2rem;
+        padding-bottom: 0.5rem;
+      }
+      a{
+        text-decoration: none;
+        color: rgb(173, 105, 15);
+        font-family: 'Martian Mono', monospace;
+        font-size: 1rem;
+      }
+      .amount {
+        margin-top: 0.5rem;
+        font-family: 'Martian Mono', monospace;
+        font-size: 0.8rem;
+      }
+    }
+    .founder-year {
+        margin-right: 1.5rem;
+        text-align: right;
+        font-size: 1.1rem;
+    }
+  }
+
+  .job-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3.5rem 1.5rem;
+    margin: 2rem 1rem 1rem;
+    color: #e7e7e7;
+    background-image: linear-gradient(to right, #0c2752, #51350b);
+    font-family: 'Mooli', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+
+    button {
+        color: white;
+        background-color: black;
+        border: 1px solid transparent;
+        width: 5rem;
+        padding: 0.7rem;
+        margin-left: 2rem;
+        font-size: 0.8rem;
+        font-family: 'Martian Mono';
+        cursor: pointer;
+    }
+  }
+}

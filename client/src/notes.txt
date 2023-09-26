@@ -1,0 +1,24 @@
+Things to do -
+
+- Change icon on index.html
+- Add location/salary etc info in database and form
+- Display only some of the jobs in homepage and add a button that would direct to Pitches page
+- Applicants do not have to login to apply to jobs, Jobs will be displayed in Pitches page
+
+
+CSS 
+
+- Add a underline animation from left to right in Navbar.scss
+
+
+After styling is done
+
+- Pagenition 
+- Filter
+- Sorting through time
+
+//IN THE FUTURE//
+
+- Pitches section will be shown only for venture capitalists
+- Job section will be diff
+- Startups and VCs can log in through diff sections

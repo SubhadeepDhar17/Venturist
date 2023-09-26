@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Martian+Mono&family=Mooli&family=Poppins&display=swap");
+/*font-family: 'Dela Gothic One', cursive;
+font-family: 'Martian Mono', monospace;
+font-family: 'Mooli', sans-serif;
+#ef629f, #5490e0*/
+
+.heading-pitch-ideas {
+    text-align: center;
+    padding: 2rem;
+    padding-bottom: 0rem;
+    margin: 1rem;
+    font-family: 'Dela Gothic One', cursive;
+    color: #B6BE9C;
+}
+
+.pitch-idea-form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    color: white;
+    width: 550px;
+    margin: auto;
+    font-family: poppins;
+
+    label {
+        margin-top: 2rem;
+    }
+
+    input, textarea {
+        margin-top: 0.5rem;
+        height: 1.4rem;
+        background-color: #cecece;
+        box-shadow: 5px 7px 0px #b3be20;
+        border: 1px solid transparent;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        font-family: poppins;
+    }
+
+    textarea {
+        height: 10rem;
+    }
+
+    p {
+        margin: 3rem auto 0rem;
+    }
+
+    .two-fields {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        input {
+            width: 170px;
+        }
+    }
+
+    button{
+        width: 100%;
+        margin: 3rem auto;
+        padding: 0.6rem;
+        background-color: #c858ae;
+        border: 1px solid transparent;
+        border-radius: 0.6rem;
+        font-family: 'Dela Gothic One';
+        font-size: 1.5rem;
+        cursor: pointer;
+        box-shadow: 0px 10px 0px #b3be20;
+
+        &:active {
+            transform: scale(0.97);
+        }
+    }
+}

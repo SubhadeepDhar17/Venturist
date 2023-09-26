@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Martian+Mono&family=Mooli&display=swap");
+/*font-family: 'Dela Gothic One', cursive;
+font-family: 'Martian Mono', monospace;
+font-family: 'Mooli', sans-serif;
+#ef629f, #5490e0*/
+
+* {
+  margin: 0;
+}
+.container {
+  width: 100vw;
+  height: 6rem;
+  align-items: center;
+  background-image: linear-gradient(to right, #e1699d, #6ea6f0);
+  display: flex;
+  justify-content: space-evenly;
+
+  a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: "Mooli";
+    color: white;
+
+    &:hover{  //Add a underline animation from left to right
+      text-decoration: underline;
+      transition: 0.5s all;
+    }
+  }
+
+  .logo {
+    a {
+      font-family: "Dela Gothic One", cursive;
+      font-size: 2rem;
+      margin: 0 20rem 0 0;
+      color: rgb(252, 244, 244);
+    }
+  }
+
+  button {
+    border-radius: 1rem;
+    border: 1px solid #ef629f;
+    padding: 0.5rem;
+    font-family: "Mooli";
+    font-size: 1rem;
+    width: 6rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #ef629f;
+      transition: 0.2s ease-in;
+      color: white;
+    }
+  }
+}
