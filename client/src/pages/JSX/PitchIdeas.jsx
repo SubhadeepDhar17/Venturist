@@ -83,7 +83,7 @@ export const PitchIdeas = () => {
           required
           onChange={handleChange}
         />
-        <p>Please do not use ",-/" in number fields</p>
+        <p>Please do not use " , - / " in number fields</p>
         <div className="two-fields">
           <label htmlFor="yearStarted">Started (year): </label>
           <label htmlFor="amountRaised">Amount Raised: ($)</label>
@@ -117,13 +117,14 @@ export const PitchIdeas = () => {
           />
           <input
             type="number"
+            step='0.01'
             name="equity"
             id="equity"
             onChange={handleChange}
           />
         </div>
-        <label htmlFor="ideas">Job Description: </label>
-        <textarea
+        <label htmlFor="ideas">Job Title: </label>
+        <input
           type="text"
           name="ideas"
           id="ideas"

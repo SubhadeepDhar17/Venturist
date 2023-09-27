@@ -30,7 +30,8 @@ export const Navbar = () => {
       <div className="logo">
       <Link to="/">Venturist</Link>
       </div>
-
+      <Link to="/pitches">Jobs</Link>
+          <Link to="/pitch-ideas">Post A Job</Link>
       {cookies.access_token === "" ||
       cookies.access_token === undefined ||
       cookies.access_token === "undefined" ? (
@@ -39,8 +40,6 @@ export const Navbar = () => {
         </>
       ) : (
         <>
-          <Link to="/pitches">Pitches</Link>
-          <Link to="/pitch-ideas">Pitch Ideas</Link>
           <button onClick={Logout}>Logout</button>
         </>
       )}

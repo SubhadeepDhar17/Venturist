@@ -29,6 +29,7 @@ const StartUpSchema = new mongoose.Schema({
     },
     equity :{
         type: Number,
+        default: 0,
     },
     jobLocation: {
         type: String,

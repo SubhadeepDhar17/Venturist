@@ -56,7 +56,7 @@ export const Pitches = () => {
                   <div>{pitchMap.email} . Remote . {pitchMap.jobLocation}</div>
                 </div>
                 
-                <a href="mailto:email@gmail.com"><button>Apply</button></a>
+                <a href={`mailto:${pitchMap.email}`}><button>Apply</button></a>
               </div>
             </div>
             <br />
@@ -66,3 +66,5 @@ export const Pitches = () => {
     </div>
   );
 };
+
+export default Pitches;

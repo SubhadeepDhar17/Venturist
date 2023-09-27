@@ -9,11 +9,14 @@ font-family: 'Mooli', sans-serif;
 }
 .container {
   width: 100vw;
-  height: 6rem;
+  height: 7.5rem;
   align-items: center;
   background-image: linear-gradient(to right, #e1699d, #6ea6f0);
   display: flex;
   justify-content: space-evenly;
+  // position: fixed;
+  // top: 0;
+  // z-index: 9;
 
   a {
     text-decoration: none;

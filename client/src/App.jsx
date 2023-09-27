@@ -18,16 +18,17 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/pitches" element={<Pitches />} />
           <Route path="/login" element={<Login />} />
-          {cookies.access_token ? (
+          {cookies.access_token === "" ||
+          cookies.access_token === undefined ||
+          cookies.access_token === "undefined" ? (
             <>
-              <Route path="/pitches" element={<Pitches />} />
-              <Route path="/pitch-ideas" element={<PitchIdeas />} />
+              <Route path="/pitch-ideas" element={<PleaseLogin />} />
             </>
           ) : (
             <>
-              <Route path="/pitches" element={<PleaseLogin />} />
-              <Route path="/pitch-ideas" element={<PleaseLogin />} />
+              <Route path="/pitch-ideas" element={<PitchIdeas />} />
             </>
           )}
         </Routes>

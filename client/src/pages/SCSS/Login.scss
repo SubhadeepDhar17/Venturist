@@ -4,7 +4,7 @@ font-family: 'Martian Mono', monospace;
 font-family: 'Mooli', sans-serif;
 #ef629f, #5490e0*/
 
-.heading-pitch-ideas {
+.heading-login {
   text-align: center;
   padding: 2rem;
   padding-bottom: 0rem;
@@ -13,22 +13,20 @@ font-family: 'Mooli', sans-serif;
   color: #b6be9c;
 }
 
-.pitch-idea-form {
+.login-form {
   display: flex;
   flex-direction: column;
   padding: 1rem;
   color: white;
   width: 550px;
   margin: auto;
-  font-family: "poppins", sans-serif;
+  font-family: poppins;
 
   label {
     margin-top: 2rem;
-    color: #cecece;
   }
 
-  input,
-  textarea {
+  input {
     margin-top: 0.5rem;
     height: 1.4rem;
     background-color: #cecece;
@@ -37,24 +35,6 @@ font-family: 'Mooli', sans-serif;
     border-radius: 0.5rem;
     padding: 0.5rem;
     font-family: poppins;
-  }
-
-  textarea {
-    height: 10rem;
-  }
-
-  p {
-    margin: 3rem auto 0rem;
-  }
-
-  .two-fields {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    input {
-      width: 170px;
-    }
   }
 
   button {
@@ -73,4 +53,15 @@ font-family: 'Mooli', sans-serif;
       transform: scale(0.97);
     }
   }
+}
+
+.user-msg {
+    font-size: 1rem;
+    text-align: center;
+    font-family: 'Martian Mono', monospace;
+    color: #cecece;
+    a {
+        color: #c858ae;
+        text-decoration: none;
+    }
 }
