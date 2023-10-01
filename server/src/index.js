@@ -3,13 +3,14 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import { userRouter } from './routes/users.js';
 import { startUpRouter } from './routes/startUps.js';
+import jwt from 'jsonwebtoken'
 
 const app = express()
 
 app.use(express.json())
 app.use(cors())
 
-app.use('/auth', userRouter)
+app.use(userRouter) 
 app.use('/startup', startUpRouter)
 
 mongoose.connect(

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
-import './Navbar.scss'
+import "./Navbar.scss";
 
 export const Navbar = () => {
   const [cookies, setCookies] = useCookies(["access_token"]);
@@ -24,14 +24,13 @@ export const Navbar = () => {
     window.localStorage.removeItem("userID");
     navigate("/login");
   };
-  console.log(getID);
   return (
     <div className="container">
       <div className="logo">
-      <Link to="/">Venturist</Link>
+        <Link to="/">Venturist</Link>
       </div>
       <Link to="/pitches">Jobs</Link>
-          <Link to="/pitch-ideas">Post A Job</Link>
+      <Link to="/pitch-ideas">Post A Job</Link>
       {cookies.access_token === "" ||
       cookies.access_token === undefined ||
       cookies.access_token === "undefined" ? (
@@ -40,6 +39,7 @@ export const Navbar = () => {
         </>
       ) : (
         <>
+        <Link to='/profile'>Profile</Link>
           <button onClick={Logout}>Logout</button>
         </>
       )}
@@ -47,8 +47,8 @@ export const Navbar = () => {
   );
 };
 
-
-{/* {!getID ? (
+{
+  /* {!getID ? (
   <>
     <Link to="/login">Log In</Link>
   </>
@@ -58,4 +58,5 @@ export const Navbar = () => {
   <Link to='/pitch-ideas'>Pitch Ideas</Link>
   <button onClick={Logout}>Logout</button>
   </>
-)} */}
+)} */
+}

@@ -8,7 +8,7 @@ export const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const [_, setCookies] = useCookies(["access_token"]);
+  const [cookies, setCookies] = useCookies(["access_token"]);
 
   const navigate = useNavigate();
 
@@ -19,17 +19,14 @@ export const Login = () => {
         username,
         password,
       });
+
       setCookies("access_token", response.data.token);
       window.localStorage.setItem("userID", response.data.userID);
-      if (response.data.userID === undefined) {
-        return alert("Invalid User");
-      }
       navigate("/");
     } catch (err) {
-      console.log(err);
+      alert("Invalid");
     }
   };
-
   return (
     <div>
       <form className="login-form" onSubmit={onSubmit}>

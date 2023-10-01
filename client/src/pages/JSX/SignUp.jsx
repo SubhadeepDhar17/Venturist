@@ -1,22 +1,29 @@
 import React, { useState } from "react";
 import axios, { AxiosError } from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../SCSS/Login.scss";
+import { useCookies } from "react-cookie";
 
 export const SignUp = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [cookies, setCookies] = useCookies(["access_token"])
+
+  const navigate = useNavigate()
 
   const onSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post("http://localhost:5000/auth/register", {
+      const response = await axios.post("http://localhost:5000/auth/register", {
         username,
         password,
       });
+
+      setCookies("access_token", response.data.token)
+      navigate('/')
       alert("You have succesfully Signed up");
     } catch (err) {
-      console.log(err);
+      alert("Username taken")
     }
   };
 

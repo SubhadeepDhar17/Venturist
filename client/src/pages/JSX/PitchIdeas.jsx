@@ -35,14 +35,13 @@ export const PitchIdeas = () => {
       alert("Posted");
       navigate("/");
     } catch (e) {
-      console.log(e);
+      alert("Unexpected error");
     }
   };
-  console.log(startUp);
   return (
     <div>
       <h1 className="heading-pitch-ideas">Create Pitch</h1>
-      <form className='pitch-idea-form' onSubmit={onSubmit}>
+      <form className="pitch-idea-form" onSubmit={onSubmit}>
         <label htmlFor="company">Company: </label>
         <input
           type="text"
@@ -103,7 +102,7 @@ export const PitchIdeas = () => {
             onChange={handleChange}
           />
         </div>
-        
+
         <div className="two-fields">
           <label htmlFor="salary">Salary ($): </label>
           <label htmlFor="equity">Equity ($): </label>
@@ -117,7 +116,7 @@ export const PitchIdeas = () => {
           />
           <input
             type="number"
-            step='0.01'
+            step="0.01"
             name="equity"
             id="equity"
             onChange={handleChange}

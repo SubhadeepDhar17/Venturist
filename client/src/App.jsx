@@ -7,10 +7,10 @@ import { Login } from "./pages/JSX/Login";
 import { PitchIdeas } from "./pages/JSX/PitchIdeas";
 import { PleaseLogin } from "./pages/JSX/PleaseLogin";
 import { Pitches } from "./pages/JSX/Pitches";
+import { Profile } from "./pages/JSX/Profile";
 
 function App() {
   const [cookies, setCookies] = useCookies(["access_token"]);
-  console.log(cookies);
   return (
     <div>
       <Router>
@@ -20,6 +20,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/pitches" element={<Pitches />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/profile" element={<Profile />} />
           {cookies.access_token === "" ||
           cookies.access_token === undefined ||
           cookies.access_token === "undefined" ? (

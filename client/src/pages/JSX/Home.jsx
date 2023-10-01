@@ -12,8 +12,10 @@ export const Home = () => {
             <h1>More To Come</h1>
             <h3>A place where talent meets talent</h3>
             {/*  */}
-              <Link to='/pitch-ideas'><button>Post A Job</button></Link>
-              {/* </Link> */}
+            <Link to="/pitch-ideas">
+              <button>Post A Job</button>
+            </Link>
+            {/* </Link> */}
             <div className="arrow-down">🔽</div>
           </div>
         </div>

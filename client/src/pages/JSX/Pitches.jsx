@@ -14,13 +14,12 @@ export const Pitches = () => {
         const response = await axios.get("http://localhost:5000/startup");
         setPitch(response.data);
       } catch (e) {
-        console.log(e);
+        alert("There was an error");
       }
     };
 
     fetchPitches();
   }, []);
-  console.log(pitch);
   return (
     <div>
       <h1 className="heading">Recent Jobs</h1>
@@ -37,10 +36,15 @@ export const Pitches = () => {
                   </div>
                   <div>
                     <h1>{pitchMap.company}</h1>
-                    <Link to={`https://www.${pitchMap.website}`} target="_blank">
+                    <Link
+                      to={`https://www.${pitchMap.website}`}
+                      target="_blank"
+                    >
                       {pitchMap.website}
                     </Link>
-                    <div className="amount">${pitchMap.amountRaised} raised</div>
+                    <div className="amount">
+                      ${pitchMap.amountRaised} raised
+                    </div>
                   </div>
                 </div>
 
@@ -52,11 +56,18 @@ export const Pitches = () => {
 
               <div className="job-container">
                 <div>
-                  <div>Job Desc: {pitchMap.ideas} . ${pitchMap.salary} . {pitchMap.equity}% equity</div>
-                  <div>{pitchMap.email} . Remote . {pitchMap.jobLocation}</div>
+                  <div>
+                    Job Desc: {pitchMap.ideas} . ${pitchMap.salary} .{" "}
+                    {pitchMap.equity}% equity
+                  </div>
+                  <div>
+                    {pitchMap.email} . Remote . {pitchMap.jobLocation}
+                  </div>
                 </div>
-                
-                <a href={`mailto:${pitchMap.email}`}><button>Apply</button></a>
+
+                <a href={`mailto:${pitchMap.email}`}>
+                  <button>Apply</button>
+                </a>
               </div>
             </div>
             <br />
