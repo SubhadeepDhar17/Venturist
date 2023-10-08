@@ -2,10 +2,17 @@ import React from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useCookies } from "react-cookie";
 import "../SCSS/PitchIdeas.scss";
 
 export const PitchIdeas = () => {
   const userID = window.localStorage.getItem("userID");
+  const [cookies, setCookies] = useCookies(["access_token"]);
+  const token = cookies.access_token;
+
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
 
   const [startUp, setstartUp] = useState({
     company: "",
@@ -16,9 +23,10 @@ export const PitchIdeas = () => {
     yearStarted: 0,
     amountRaised: 0,
     ideas: "",
+    jobDescription: "",
     salary: 0,
     equity: 0,
-    hq: "",
+    jobLocation: "",
   });
 
   const navigate = useNavigate();
@@ -31,13 +39,14 @@ export const PitchIdeas = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post("http://localhost:5000/startup", startUp);
+      await axios.post("http://localhost:5000/pitchIdeas", startUp, config);
       alert("Posted");
       navigate("/");
     } catch (e) {
       alert("Unexpected error");
     }
   };
+
   return (
     <div>
       <h1 className="heading-pitch-ideas">Create Pitch</h1>
@@ -79,6 +88,13 @@ export const PitchIdeas = () => {
           type="email"
           name="email"
           id="email"
+          required
+          onChange={handleChange}
+        />
+        <label htmlFor="jobDescription">Job Description: </label>
+        <textarea
+          name="jobDescription"
+          id="jobDescription"
           required
           onChange={handleChange}
         />
@@ -130,8 +146,14 @@ export const PitchIdeas = () => {
           required
           onChange={handleChange}
         />
-        <label htmlFor="ideas">Head Quaters: </label>
-        <input type="text" name="hq" id="hq" required onChange={handleChange} />
+        <label htmlFor="jobLocation">Head Quaters: </label>
+        <input
+          type="text"
+          name="jobLocation"
+          id="jobLocation"
+          required
+          onChange={handleChange}
+        />
         <button type="submit">Post</button>
       </form>
     </div>

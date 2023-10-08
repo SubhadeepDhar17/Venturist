@@ -35,6 +35,10 @@ const StartUpSchema = new mongoose.Schema({
         type: String,
         default: 'Anywhere in the world'
     },
+    jobDescription: {
+        type: String,
+        required: true
+    },
     yearStarted: {
         type: Number,
         required: true
@@ -45,6 +49,11 @@ const StartUpSchema = new mongoose.Schema({
     ideas: {
         type: String,
         required: true
+    }, 
+    owner: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'users'
     }
 })
 

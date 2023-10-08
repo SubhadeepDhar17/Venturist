@@ -11,7 +11,7 @@ export const Pitches = () => {
   useEffect(() => {
     const fetchPitches = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/startup");
+        const response = await axios.get("http://localhost:5000/pitchesAll");
         setPitch(response.data);
       } catch (e) {
         alert("There was an error");
@@ -23,12 +23,13 @@ export const Pitches = () => {
   return (
     <div>
       <h1 className="heading">Recent Jobs</h1>
-      <div>{pitch.company}</div>
+      {/* <div>{pitch.company}</div> */}
       <ul>
         {pitch.map((pitchMap) => (
           <li key={pitchMap._id}>
             <br />
             <div className="pitch-container">
+              <Link to={`/jobdesc/${pitchMap._id}`}>Click</Link>
               <div className="top-part">
                 <div className="logo-company-site">
                   <div>

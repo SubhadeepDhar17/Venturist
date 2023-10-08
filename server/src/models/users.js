@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import { StartUpModel } from "./startUps.js";
 
 const UserSchema = new mongoose.Schema({
   username: {
@@ -21,6 +22,12 @@ const UserSchema = new mongoose.Schema({
       },
     },
   ],
+});
+
+UserSchema.virtual("startUps", {
+  ref: "startUps",
+  localField: "_id",
+  foreignField: "owner",
 });
 
 UserSchema.methods.toJSON = function () {
@@ -68,5 +75,11 @@ UserSchema.pre("save", async function (next) {
 
   next();
 });
+
+UserSchema.pre("deleteOne", {document: true, query: false}, async function (next) {
+  const user = this
+  await StartUpModel.deleteMany({ owner: user._id })
+  next()
+})
 
 export const UserModel = mongoose.model("users", UserSchema);

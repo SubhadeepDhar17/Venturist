@@ -6,7 +6,7 @@ export const PleaseLogin = () => {
   return (
     <div className="please-login">
       Please&nbsp; <Link to="/login"><button>Login</button></Link>
-      &nbsp;To Post Jobs
+      &nbsp; First
     </div>
   );
 };
