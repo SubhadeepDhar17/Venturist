@@ -10,7 +10,6 @@ export const Profile = () => {
   const [pitches, setPitches] = useState([]);
   const [username, setUsername] = useState("");
 
-
   const token = cookies.access_token;
   const config = {
     headers: { Authorization: `Bearer ${token}` },
@@ -85,7 +84,10 @@ export const Profile = () => {
         <span className="fields-profile">profile.email</span>
       </div>
 
-      <form onSubmit={onSubmitUserUpdate}>
+      <hr />
+
+      <h2 className="update-heading">Update Your Profile</h2>
+      <form className="profile-form" onSubmit={onSubmitUserUpdate}>
         <label htmlFor="username">Username: </label>
         <input
           type="text"
@@ -95,18 +97,23 @@ export const Profile = () => {
         />
         <button>Edit</button>
       </form>
-      <button onClick={onDeleteUser}>Delete User</button>
+      <div className="delete">
+        <span>Danger Zone ⚠️ Cannot be undone :</span>
+        <button className="delete-button" onClick={onDeleteUser}>
+          Delete User
+        </button>
+      </div>
 
       <hr />
 
       <div>
-        <h1>Your Job Postings</h1>
+        <h1 className="job-profile-heading">Your Job Postings</h1>
         <ul>
           {pitches.map((pitchMap) => (
             <li key={pitchMap._id}>
               <br />
+              <Link to={`/post/${pitchMap._id}`}>
               <div className="pitch-container">
-                <Link to={`/post/${pitchMap._id}`}>click</Link>
                 <div className="top-part">
                   <div className="logo-company-site">
                     <div>
@@ -142,12 +149,12 @@ export const Profile = () => {
                       {pitchMap.email} . Remote . {pitchMap.jobLocation}
                     </div>
                   </div>
-
-                  <a href={`mailto:${pitchMap.email}`}>
+                  {/* <a href={`mailto:${pitchMap.email}`}>
                     <button>Apply</button>
-                  </a>
+                  </a> */}
                 </div>
               </div>
+              </Link>
               <br />
             </li>
           ))}

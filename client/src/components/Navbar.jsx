@@ -27,7 +27,7 @@ export const Navbar = () => {
   return (
     <div className="container">
       <div className="logo">
-        <Link to="/">Venturist</Link>
+        <Link to="/">Nexnd</Link>
       </div>
       <Link to="/pitches">Jobs</Link>
       <Link to="/pitch-ideas">Post A Job</Link>

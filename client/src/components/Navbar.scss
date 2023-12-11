@@ -24,7 +24,8 @@ font-family: 'Mooli', sans-serif;
     font-family: "Mooli";
     color: white;
 
-    &:hover{  //Add a underline animation from left to right
+    &:hover {
+      //Add a underline animation from left to right
       text-decoration: underline;
       transition: 0.5s all;
     }
@@ -35,7 +36,14 @@ font-family: 'Mooli', sans-serif;
       font-family: "Dela Gothic One", cursive;
       font-size: 2rem;
       margin: 0 20rem 0 0;
+      @media only screen and (max-width: 768px) {
+        margin: auto;;
+      }
       color: rgb(252, 244, 244);
+
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 
